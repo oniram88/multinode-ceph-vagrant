@@ -1,1 +1,4 @@
 .vagrant/
+volumes
+.idea
+ubuntu-*-console.log
