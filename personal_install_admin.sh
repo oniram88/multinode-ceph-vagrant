@@ -40,3 +40,17 @@ ceph-deploy mgr create ceph-server-1
 ceph-deploy osd create --data /dev/sdc ceph-server-1
 ceph-deploy osd create --data /dev/sdc ceph-server-2
 ceph-deploy osd create --data /dev/sdc ceph-server-3
+
+
+# dashboard
+
+sudo ceph mgr module enable dashboard
+sudo ceph config set mgr mgr/dashboard/ssl false
+sudo ceph mgr module disable dashboard
+sudo ceph mgr module enable dashboard
+sudo ceph dashboard set-login-credentials admin XXXXPASSWORDXXXX
+
+
+#pool
+sudo ceph osd pool create first_test 100 #TODO da capire cosa serve il PG_NUM
+
